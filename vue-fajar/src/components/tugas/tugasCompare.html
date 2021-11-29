@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tugas Compare Fajar</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script> -->
+</head>
+
+<body>
+    <div id="app">
+        <component :is="currentView"  keep-alive></component>
+        <button @click="currentView='trim'" keep-alive>Tombol Trim</button><br><br>
+        <button @click="currentView='numb'" keep-alive>Tombol Number</button><br><br>
+        <button @click="currentView='lazy'" keep-alive>Tombol Lazy</button><br><br>
+    </div>
+
+    <template id="trim-template">
+        <div>
+        <h1>ini merupakan input Trim</h1>
+        <input v-model.trim="msg1"><br>
+        <p>{{ msg1 }}</p><br>
+    </div>
+    </template>
+
+    <template id="numb-template">
+        <div>
+        <h1>ini merupakan input Number</h1>
+        <input v-model.number="msg2" type="number"><br>
+        <p>{{ msg2 }}</p><br>
+    </div>
+    </template>
+    
+    <template id="lazy-template">
+        <div>
+        <h1>ini merupakan input Lazy</h1>
+        <input v-model.lazy="msg3"><br>
+        <p>{{ msg3 }}</p><br>
+    </div>
+
+    </template>
+
+    <script>
+        Vue.component('trim', {
+            template: '#trim-template',
+            data() {
+                return {
+                    msg1:''
+                }
+            },
+        })
+
+        Vue.component('numb', {
+            template: '#numb-template',
+            data() {
+                return {
+                    msg2:''
+                }
+            },
+        });
+
+        Vue.component('lazy', {
+            template: '#lazy-template',
+            data() {
+                return {
+                   msg3:''
+                }
+            },
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                currentView: 'trim'
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Dynamic Component</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
+</head>
+
+<body>
+    <h3></h3>
+    <div id="app">
+        <input type="number" v-model="tombol-number" v-focus />
+        <div class="texty">
+        </div>
+    </div>
+    <ul>
+        <li><a href="#" @click="currentView='tombol-number'" keep-alive>Tombol Number</a></li>
+        <li><a href="#" @click="currentView='tombol-trim'" keep-alive>Tombol Trim</a></li>
+        <li><a href="#" @click="currentView='tombol-lazy'" keep-alive>Tombol Lazy</a></li>
+    </ul>
+    <component :is="currentView" class="animated" transition="custom-fade" transition-mode="out-in" keep-alive>
+    </component>
+    </div>
+
+    <template id="tombol-number-template">
+        <input v-model.number="msg2" type="number"><br>
+        <p>{{ msg2 }}</p><br>
+
+        <h1>Selamat Datang</h1>
+        <h2>Di Menu Home Dynamic Component</h2>
+    </template>
+
+    <template id="tombol-trim-template">
+        <ul>
+            <input v-model.trim="msg1"><br>
+            <p>{{ msg1 }}</p><br>
+
+            <li v-for="member in members">
+                {{ member }}
+            </li>
+        </ul>
+    </template>
+    <template id="tombol-lazy-template">
+        <div id="c">
+            <h1>{{ message }}</h1>
+            <button @click="pre">Coba Tekan</button>
+        </div><br>
+
+        <div id="ap">
+            <input v-model.lazy="msg3"><br>
+            <p>{{ msg3 }}</p><br>
+
+        </div>
+
+    </template>
+
+    <script>
+        Vue.transition('custom-fade', {
+            enterClass: 'bounceInDown',
+            enterClass: 'fadeOutUp'
+        })
+        Vue.mixin({
+            created() {
+                console.log('mixins vue')
+            },
+        })
+
+
+        Vue.component('tombol-number', {
+            template: '#tombolNumber-template'
+        })
+
+        Vue.component('tombol-trim', {
+            template: '#tombolTrim-template',
+            data: function () {
+                return {
+                    members: [
+                        'sd', 'smp', 'sma'
+                    ]
+                }
+            },
+        });
+
+        Vue.component('tombol-lazy', {
+            template: '#tombolLazy-template',
+            data: function () {
+                return {
+                    menu: [
+                    ]
+                }
+            },
+        });
+
+        new Vue({
+            el: '#app',
+            data: {
+                currentView: 'home'
+            }
+        });
+    </script>
+</body>
+
+</html>
+</body>
+
+</html> -->

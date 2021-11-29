@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tugas Vue Fajar</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <style>
+        .box {
+            background-color: lightblue;
+            width: 25rem;
+            aspect-ratio: 1 / 1;
+
+            inset: 0rem;
+            margin: auto;
+            border-radius: 15px;
+            border-color: black;
+            text-align: center;
+        }
+
+        h3 {
+            padding-top: 100px;
+        }
+
+        p {
+            color: red;
+        }
+
+        input {
+            width: 15ram;
+            text-align: center;
+            height: 40px;
+            border-radius: 100px;
+            border: none;
+        }
+    </style>
+    <h2 style="background-color: red; color: white;">navbar</h2>
+    <div id="tot">
+        <img src="https://cdn-2.tstatic.net/newsmaker/foto/bank/images/oh-young-soo-sebagai-oh-il-nam-di-squid-game.jpg"v-pin:[direction]="200" width="250px">
+      </div>
+    <div class="box" id="b">
+        <h3>Selamat Datang Di Aplikasi Reverse Kata</h3>
+        <p>{{ texty }}</p>
+        <input v-model="pesan">
+    </div>
+    <h2 style="background-color:black; color: white;">footer</h2>
+    <script>
+        var app5 = new Vue({
+            el: '#b',
+            data: {
+                pesan: ''
+            },
+            computed: {
+                pesan1: function () {
+                    return this.pesan.split('').reverse().join('')
+                }
+            }
+        })
+        Vue.directive('pin', {
+  bind: function (el, binding, vnode) {
+    el.style.position = 'fixed'
+    var s = (binding.arg == 'right' ? 'right' : 'top')
+    el.style[s] = binding.value + 'px'
+  }
+})
+new Vue({
+  el: '#tot',
+  data: function () {
+    return {
+      direction: 'right'
+    }
+  }
+})
+    </script>
+    </head>
+</html>

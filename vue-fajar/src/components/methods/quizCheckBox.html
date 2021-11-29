@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+<style>
+    body{
+        background-image: url("https://cdn.idntimes.com/content-images/post/20181001/5a7fdc1654cdccaba3f012902a6e98d7.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+    }
+    header {
+        text-align: center;
+        color: black;
+    }
+    h1 {
+        border: goldenrod;
+        border-radius: 5%;
+        padding: 10px;
+    }
+    section {
+        width: 25rem;
+        aspect-ratio: 1 / 1;
+        margin-right: auto;
+        border-radius: 5%;
+        border: 1px solid whitesmoke;
+    }
+
+</style>
+<body>
+    <header>
+        <h1 style="border: 2px solid whitesmoke;">Selamat Datang di Filosofi Kopi</h1>
+        <h2 style="color: rgb(255, 251, 2);">Menu :</h2>
+    </header>
+    <section id="c" style="color: orangered;">
+        <h3 style="text-align: center;">Aneka Kopi :</h3>
+                <input type="checkbox" id="jack" value="Kopi Hitam" v-model="checkedNames">
+                <label for="jack">Kopi Hitam</label><br>
+                <input type="checkbox" id="john" value="Kopi Gula Aren" v-model="checkedNames">
+                <label for="john">Kopi Gula Aren</label><br>
+                <input type="checkbox" id="mike" value="White Coffe" v-model="checkedNames">
+                <label for="mike">White Coffe</label><br>
+                <br>
+                <span>Pesanan Saya: {{ checkedNames }}</span>
+            </div>        
+    </section>
+    <script>
+        new Vue({
+            el: '#c',
+            data: {
+                checkedNames: []
+            }
+        })
+
+    </script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Data Binding</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <center>
+    <h2 id="lol">Selamat Datang di Filosofi Kopi</h2>
+    </center>
+
+    <style>
+        body {
+  background-image: url("bgdesert.jpg");
+}
+        .box {
+            background-image: url("https://thumbs.dreamstime.com/b/monkey-business-appearance-monkey-business-appearance-cartoon-character-design-vector-illustration-124032408.jpg");
+            background-size: cover;
+            width: 25rem;
+            aspect-ratio: 1 / 1;
+            border: 2px dotted black;
+            inset: 0rem;
+            margin: auto;
+            border-radius: 15px;
+            border-color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="texty" v-focus>
+        <div class="box">
+            <h2>Kirim Masukan Anda</h2>
+            <p style="border: 1px solid black; height:20px; ">{{ texty }}</p>
+        </div>
+    </div>
+    <script>
+        var vo = new Vue({
+            el: '#app',
+            data: {
+                texty: ''
+            },
+        });
+    </script>
+
+</body>
+
+</html> -->

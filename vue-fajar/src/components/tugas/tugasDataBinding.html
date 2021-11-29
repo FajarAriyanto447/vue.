@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <img src="https://previews.123rf.com/images/8creator/8creator1706/8creator170600014/82142338-minsk-belarus-may-18-2017-big-mac-hamburger-menu-in-a-mcdonald-s-restaurant-.jpg" width="600px" height="350px">
+</head>
+<style>
+    body{
+        margin-left: 20rem;
+        margin-right: 20rem;
+        margin-top: 20rem;
+    }
+        div, h2 {
+        border: 2px solid goldenrod;
+        padding: 10px;
+    }
+
+</style>
+<center>
+<h2>Paket Hemat Big Mac, Medium<span style="float: right;">48.500<sub><p style="font-size: 10px;">Harga dasar</p></sub></span></h2>
+</center>
+<body>
+    <div id="c">
+    <h3 style="text-align: left;">Select Medium Drink <sub>Pilih 1</sub> </h3>
+    <input type="checkbox" id="jack" value="Medium Coca Cola" v-model="checkedNames">
+    <label for="jack">Medium Coca Cola <span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="john" value="Medium Fanta" v-model="checkedNames">
+    <label for="john"> Medium Fanta<span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Medium Sprite" v-model="checkedNames">
+    <label for="mike">Medium Sprite<span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="jack" value="Medium Fruti Tea Lemon" v-model="checkedNames">
+    <label for="jack">Medium Fruti Tea Lemon<span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="john" value="Iched Lychee Tea" v-model="checkedNames">
+    <label for="john">Iched Leched Tea<span style="float: right;">+8.500</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Large Coca Cola" v-model="checkedNames">
+    <label for="mike">Large Coca Cola<span style="float: right;">+2.000</span></label><hr><br>
+
+    <input type="checkbox" id="jack" value="Large Fanta" v-model="checkedNames">
+    <label for="jack">Large Fanta<span style="float: right;">+2.000</span></label><hr><br>
+
+    <input type="checkbox" id="john" value="Large Sprite" v-model="checkedNames">
+    <label for="john">Large Sprite<span style="float: right;">+2.000</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Fruit Tea Lemon Large" v-model="checkedNames">
+    <label for="mike">Fruti Tea Lemon Large<span style="float: right;">+2.000</span><hr></label><br>
+
+    <input type="checkbox" id="jack" value="Tehbotol Tawar" v-model="checkedNames">
+    <label for="jack">Tehbotol Tawar<span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="john" value="Tehbotol Kotak" v-model="checkedNames">
+    <label for="john">Tehbotol Kotak<span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Bottled Mineral Water" v-model="checkedNames">
+    <label for="mike">Bottled Mineral Water<span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="john" value="Fruti Tea Backrurrant" v-model="checkedNames">
+    <label for="john">Fruti Tea Backrurrant<span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Country Choice Orange" v-model="checkedNames">
+    <label for="mike">Country Choice Orange<span style="float: right;">+2.000</span></label><hr><br>
+
+    <input type="checkbox" id="jack" value="Milo Medium" v-model="checkedNames">
+    <label for="jack">Milo Medium<span style="float: right;">+4.500</span></label><hr><br>
+
+    <input type="checkbox" id="john" value="Milo Regular" v-model="checkedNames">
+    <label for="john">Milo Regular<span style="float: right;">+1.500</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Fanta Float" v-model="checkedNames">
+    <label for="mike">Fanta Float<span style="float: right;">+1.000</span></label><hr><br>
+
+    <input type="checkbox" id="jack" value="Coke Float" v-model="checkedNames">
+    <label for="jack">Coke Float<span style="float: right;">+1.000</span></label><hr><br>
+
+    <input type="checkbox" id="john" value="Iced Coffee Float" v-model="checkedNames">
+    <label for="john">Iced Coffee Float<span style="float: right;">+9.000</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Iced Coffee" v-model="checkedNames">
+    <label for="mike">Iced Coffee<span style="float: right;">+6.000</span></label><hr><br>
+    
+    <input type="checkbox" id="john" value="Iced Coffee Jelly" v-model="checkedNames">
+    <label for="john">Iced Coffee Jelly<span style="float: right;">+8.000</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Iced Coffee Jelly Float" v-model="checkedNames">
+    <label for="mike">Iced Coffee Jelly Float<span style="float: right;">+11.000</span></label><hr><br>
+
+    <input type="checkbox" id="jack" value="Hot Coffee" v-model="checkedNames">
+    <label for="jack">Hot Coffee<span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="john" value="Hot Tea" v-model="checkedNames">
+    <label for="john">Hot Tea<span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Coffee Whit Milk" v-model="checkedNames">
+    <label for="mike">Coffee Whit Milk<span style="float: right;">0</span></label><hr><br>
+
+    <input type="checkbox" id="jack" value="Tea Whit Milk" v-model="checkedNames">
+    <label for="jack">Tea Whit Milk<span style="float: right;">0</span></label><hr><br>
+
+<!-- Remove From Big Mac -->
+
+    <h3 style="text-align: left;">Remove from Big Mac <sub>Tidak wajib, maks 6</sub></h3>
+    <input type="checkbox" id="mike" value="No Beef Patty" v-model="checkedNames1">
+    <label for="mike">No Beef Patty<span style="float: right;">0</span></label>
+    <hr><br>
+
+    <input type="checkbox" id="mike" value="No Cheese Slice" v-model="checkedNames1">
+    <label for="mike">No Cheese Slice<span style="float: right;">0</span></label>
+    <hr><br>
+
+    <input type="checkbox" id="mike" value="No Picke" v-model="checkedNames1">
+    <label for="mike">No Picke<span style="float: right;">0</span></label>
+    <hr><br>
+
+    <input type="checkbox" id="mike" value="No Lettuce" v-model="checkedNames1">
+    <label for="mike">No Lettuce<span style="float: right;">0</span></label>
+    <hr><br>
+
+    <input type="checkbox" id="mike" value="No Onion" v-model="checkedNames1">
+    <label for="mike">No Onion<span style="float: right;">0</span></label>
+    <hr><br>
+
+    <input type="checkbox" id="mike" value="No Bigamc Sauce" v-model="checkedNames1">
+    <label for="mike">No Bigmac Sauce<span style="float: right;">0</span></label>
+    <hr><br>
+
+<!-- Extra for Big Mac -->
+
+    <h3 style="text-align: left;">Extra for Big Mac <sub>Tidak wajib, maks 8</sub></h3>
+    <input type="checkbox" id="jack" value="Extra Beef Patty" v-model="checkedNames2">
+    <label for="jack">Extra Beef Patty<span style="float: right;">+12.000</span></label><hr><br>
+
+    <input type="checkbox" id="john" value="Extra Cheese Slice" v-model="checkedNames2">
+    <label for="john">Extra Cheese Slice<span style="float: right;">+7.000</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Extra Pickle" v-model="checkedNames2">
+    <label for="mike">Extra Pickle<span style="float: right;">+1.000</span></label><hr><br>
+
+    <input type="checkbox" id="jack" value="Extra Lettuce" v-model="checkedNames2">
+    <label for="jack">Extra Lettuce<span style="float: right;">+1.000</span></label><hr><br>
+
+    <input type="checkbox" id="jack" value="Extra Onion" v-model="checkedNames2">
+    <label for="jack">Extra Onion<span style="float: right;">+1.000</span></label><hr><br>
+
+    <input type="checkbox" id="john" value="Extra Big Mac Sauce " v-model="checkedNames2">
+    <label for="john">Extra Big Mac Sauce<span style="float: right;">+1.000</span></label><hr><br>
+
+    <input type="checkbox" id="mike" value="Add Beef Rasher" v-model="checkedNames2">
+    <label for="mike">Add Beef Rasher<span style="float: right;">+1.000</span></label><hr><br>
+
+    <input type="checkbox" id="jack" value="Plain" v-model="checkedNames2">
+    <label for="jack">Plain<span style="float: right;">0</span></label><hr><br>
+<center>
+    <span>Pesanan Saya: {{ checkedNames }}</span><br>
+    <span>Pesanan Saya: {{ checkedNames1 }}</span><br>
+    <span>Pesanan Saya: {{ checkedNames2 }}</span><br>
+</center>
+
+</div>
+
+<script>
+    new Vue({
+        el: '#c',
+        data: {
+            checkedNames: [],
+            checkedNames1: [],
+            checkedNames2: [],
+
+        }
+    })
+
+
+</script>
+
+</body>
+</html>

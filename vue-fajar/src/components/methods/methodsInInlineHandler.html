@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
+</head>
+<body>
+    <div id="example-3">
+        <button v-on:click="say('Hi Cantik')">Hi</button>
+        <button v-on:click="say('Kamu Mau Nggk Jadi Pacar ku??')">Apa siihhhh</button>
+        <button v-on:click="say('Kamu Mau Nggk Jadi Pacar ku??')">Apa siihhhh</button>
+
+    </div>
+    <script>
+        new Vue({
+            el: '#example-3',
+            methods: {
+                say: function (message) {
+                    alert(message)
+                    console.log(message)
+
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

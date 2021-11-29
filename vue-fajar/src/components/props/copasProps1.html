@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan Vue 014</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div id="app">
+        <div class="jumbotron text-center">
+            <h1>Bootstrap 4</h1>
+            <p>Latihan014 - Penggunaan Slot, Named Slots dan Scoped Slots pada Vue.js</p>
+          </div>
+        <div class="container">
+            
+            <div class="row">
+
+                <div class="col-md-6">
+                    <contoh-slot-biasa nama="Varian Hermianto" whatsapp="08-222-666-777-8">
+                    </contoh-slot-biasa>
+                </div>
+
+                <div class="col-md-6">
+                    <contoh-slot-biasa nama="Varian Hermianto" whatsapp="08-222-666-777-8">
+                        Juventini yang kada-kadang Hala Madrid.
+                    </contoh-slot-biasa>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="vue.js"></script>
+    <script src="latihan014.js"></script>
+    <script>
+        Vue.component('ContohSlotBiasa', {
+    props: ['nama', 'whatsapp'],
+    template: `
+        <div style="margin-top: 20px;">
+            <div class="card">
+                <div class="card-body">
+
+                    <p class="card-text">Contoh Slot Biasa</p>
+                    
+                    <hr/>
+                    
+                    <h4 class="card-title">{{ nama }}</h4>
+                    
+                    <p class="card-text">
+                        <slot>Deskripsi Default</slot>
+                    </p>
+                    
+                    <hr/>
+                    
+                    <p class="card-text"><strong>Kontak WA :</strong> {{ whatsapp }}</p>
+                    
+                </div>
+            </div>
+        </div>
+    `
+});
+
+new Vue ({    
+    el: '#app'
+});
+    </script>
+</body>
+</html>

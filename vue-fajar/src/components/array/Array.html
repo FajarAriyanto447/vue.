@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>My Array</p>
+        <p>{{myArr}}</p>
+        <button @click="changeArrayItem">
+            Change
+        </button>
+    </div>
+    <div id="ppa">
+        <p>My Array</p>
+        <p>{{myArr1}}</p>
+        <button @click="changeArrayItem1">
+            Change
+        </button>
+    </div>
+    <div id="ppaa">
+        <p>My Array</p>
+        <p>{{myArr2}}</p>
+        <button @click="changeArrayItem2">
+            Change
+        </button>
+    </div>
+    <div id="app1">
+        <p>My Array</p>
+        <p v-for="item in myArr3">{{item.name}} : {{item.nestedArr3}}</p>
+        <button @click="changeArrayItem3">Change</button>
+
+    </div>
+
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            myArr:['apple', 'orange', 'banana', 'grapes']
+        },
+        methods:{
+            changeArrayItem: function(){
+                this.$set(this.myArr, 0, 'semangka');
+                
+            }
+        }
+    })
+
+    new Vue({
+        el:'#ppa',
+        data:{
+            myArr1:['apple', 'orange', 'banana', 'grapes']
+        },
+        methods:{
+            changeArrayItem1: function(){
+                this.myArr1.splice(0, 6, 'buah naga');
+                
+            }
+        }
+    })
+    // 
+    new Vue({
+        el:'#ppaa',
+        data:{
+            myArr2: [
+            ['apple', 'orange'],
+            [ 'banana', 'grapes']
+            ]
+        },
+        methods:{
+            changeArrayItem2: function(){
+                this.$set(this.myArr2[1],1, 'strawberry');
+                
+            }
+        }
+    })
+
+    // 
+    new Vue({
+        el:'#app1',
+        data:{
+            myArr3: [
+            {
+                name:'object-1',
+                nestedArr3:['apple','banana']
+            },
+            {
+                name:'object-2',
+                nestedArr3:['grape', 'orange']
+            }
+            ]
+        },
+        methods: {
+            changeArrayItem2: function(){
+                this.$set(this.myArr3[1].nestedArr3,1, 'strawberry');
+            }
+        }
+        })
+</script>
+</body>
+</html>

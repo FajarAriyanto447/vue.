@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <blog-post post-title="hello!"></blog-post>
+    </div>
+    <script>
+        Vue.component('blog-post', {
+            // camelCase in JavaScript
+            props: ['postTitle'],
+            template: '<h1>{{ postTitle }}</h1>'
+        })
+        var vo = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Props</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue/min.js"></script> -->
+
+
+</head>
+
+<body>
+    <div id="ppa">
+        <blog-post title="My journey with Vue" likes="24"></blog-post>
+        <blog-post v-bind:title="post-title"></blog-post>
+        <blog-post v-bind:title="post.title + ' by ' + post.author.name"></blog-post>
+    </div>
+
+    <script>
+        Vue.component('blog-post',{
+            props: ['title', 'likes', 'isPublished', 'commentIds', 'author'],
+            template: `<h4>{{ title }}</h4>
+            <p>{{likes}}`
+        })
+        var vo = new Vue({
+            el: '#ppa',
+            props: {
+                title: String,
+                likes: Number,
+                isPublished: Boolean,
+                commentIds: Array,
+                author: Object,
+                callback: Function,
+                contactsPromise: Promise 
+            },
+            data: {
+
+            },
+        })
+    </script>
+</body>
+</html>

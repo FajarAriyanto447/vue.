@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="demo">
+        <counter v-model="resultFromChild"></counter>
+        This is in parent {{ resultFromChild }}
+
+    </div>
+    <script>
+         new Vue({
+            el: '#demo',
+            data() {
+                return {
+                    resultFromChild: null
+                },
+                Vue.component('counter', {
+            template: `<div><button @click='add'>x3</button>
+                <button @click='sub'>/3</button>
+                <div>This is inside the child component: {{ result }}</div></div>`,
+            data() {
+                return {
+                    result: 2
+                }
+            },
+            props: ['value'],
+            methods: {
+                emitResult() {
+                    this.$emit('input', this.result)
+                },
+                add() {
+                    this.result *= 3
+                    this.emitResult()
+                },
+                sub() {
+                    this.result /= 3
+                    this.emitResult()
+                }
+            }
+        })
+            }
+        })
+       
+    </script>
+</body>
+
+</html>

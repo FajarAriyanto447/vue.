@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Data Binding</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+    <style>
+        .box {
+            background-image: url("https://thumbs.dreamstime.com/b/monkey-business-appearance-monkey-business-appearance-cartoon-character-design-vector-illustration-124032408.jpg");
+            background-size: cover;
+            width: 25rem;
+            aspect-ratio: 1 / 1;
+            border: 2px dotted black;
+            inset: 0rem;
+            margin: auto;
+            border-radius: 15px;
+            border-color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="c">
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>Checked names: {{ checkedNames }}</span>
+    </div>
+    <div id="app">
+
+        <span>Multiline message is:</span>
+        <p style="white-space: pre-line;">{{ message }}</p>
+        <br>
+        <textarea v-model="texty" placeholder="add multiple lines"></textarea>
+        <!-- kiii -->
+        <input type="checkbox" id="checkbox" v-model="texty">
+        <label for="checkbox">{{ texty }}</label>
+        <!-- kiii -->
+        <div class="box">
+            <h2>Kirim Masukan Anda</h2>
+            <textarea style="border: 1px solid black; height:20px; ">{{ texty }}</textarea>
+        </div>
+    </div>
+    <script>
+        var vo = new Vue({
+            el: '#app',
+            data: {
+                texty: ''
+            },
+        });
+
+        new Vue({
+            el: '#c',
+            data: {
+                checkedNames: []
+            }
+        })
+    </script>
+
+</body>
+
+</html>

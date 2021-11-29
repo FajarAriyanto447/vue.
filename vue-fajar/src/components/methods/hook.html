@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="el">
+        <h1>{{ message }}</h1>
+        <button @click="pre">Coba Tekan</button>
+    </div><br>
+
+    <div id="ap">
+    <input v-model.trim="msg1"><br>
+    <p>{{ msg1 }}</p><br>
+    <input v-model.number="msg2" type="number"><br>
+    <p>{{ msg2 }}</p><br>
+    <input v-model.lazy="msg3"><br>
+    <p>{{ msg3 }}</p><br>
+    </div>
+    <script>
+        Vue.mixin({
+            created() {
+                console.log('mixins vue')
+            },
+        })
+        const myMixin ={
+            data() {
+                return{
+                    message: 'this is from the mixin'
+                }
+            },
+            methods:{
+                pre(){
+                    alert('Hello Semua')
+                }
+            }
+        }
+
+        const val= new Vue({
+            el:'#el',
+            mixins:[myMixin],
+            data() {
+                return {
+                    message: 'Root vue Instance'
+                }
+            },
+        })
+        new Vue({
+            el:'#ap',
+            data: {
+                msg1:'',
+                msg2:'',
+                msg3:''
+            }
+        })
+    </script>
+</body>
+</html>

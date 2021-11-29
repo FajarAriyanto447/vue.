@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>computed propertie</title>
+</head>
+<body>
+    <p>Buatlah Penambahan, Pengurangan, Perkalian dan Pembagian dari Huruf Abjad Sesuai Nama dan Absen.</p>
+    <div id="dw">
+        <p>Hasil {{ f }} + 16 = {{ hasil1 }}</p>
+        <p>Hasil {{ f }} - 16 = {{ hasil2 }}</p>
+        <p>Hasil {{ f }} x 16 = {{ hasil3 }}</p>
+        <p>Hasil {{ f }} / 16 = {{ hasil4 }}</p>
+        <!-- <p>Total nilai = {{ hasil }}</p> -->
+    </div>
+    <script type="text/javascript"  src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+    new Vue({
+        el:'#dw',
+        data: {
+            f: 6,
+            b: 16,
+        },
+        computed:{
+            hasil1: function() {
+                return this.f + 16;
+            },
+            hasil2: function() {
+                return this.f - 16;
+            },
+            hasil3: function() {
+                return this.f * 16;
+            },
+            hasil4: function() {
+                return this.f / 16;
+            }
+        }
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tugas List 1</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.28/vue.min.js"></script>
+
+</head>
+<body  style="border: 2px dotted black; width: 200px;" >
+    <ol type="A" :start="7" id="example-1">
+        <li v-for="item in items" :key="item.message">
+            {{item.message}}
+        </li>
+    </ol>
+    <script>
+        var example2 = new Vue({
+            el: '#example-1',
+            data: {
+                items: [
+                    {message: 'Apel'},
+                    {message: 'Semangka'},
+                    {message: 'Jeruk'},
+                    {message: 'Melon'},
+                    {message: 'Pepaya'}
+                    
+                ]
+            }
+        })
+    </script>
+</body>
+</html>
